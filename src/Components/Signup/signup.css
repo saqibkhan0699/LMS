@@ -1,0 +1,93 @@
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: azure;
+}
+
+.signup-form {
+  background-color: #f8f9fa;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  animation: slideInRight 0.8s forwards;
+  -webkit-animation: slideInRight 0.8s forwards;
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); /* Start position is outside of viewport */
+  }
+  to {
+    transform: translateX(0); /* Slide in to 0px from the right */
+  }
+}
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+.heading1{
+  color: #4caf50;
+}
+
+.login-link a {
+  color:  #4caf50;
+  text-decoration: none;
+}
+.logo {
+  max-width: 100%;
+  justify-content: center;
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 768px) {
+  .signup-form {
+    max-width: 90%;
+  }
+}

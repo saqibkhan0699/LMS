@@ -1,0 +1,137 @@
+.technical-questions-container {
+  display: flex;
+  flex-direction: column; /* Change to column layout */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Set height to fill the viewport */
+}
+
+.questions-container {
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-container {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.question-form {
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items vertically */
+}
+
+.submit-button {
+  margin-top: 10px;
+  align-self: center; /* Center the button horizontally */
+}
+.error-message {
+  color: red;
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.dropdown-container {
+  padding-top: 20px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.dropdown {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  appearance: none;
+  width: 200px;
+}
+
+.dropdown.selected {
+  padding-right: 40px;
+}
+
+.cross-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.back-button {
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+}
+
+.error-message {
+  margin-left: 10px;
+  color: red;
+  margin-top: 5px;
+}
+
+.submit-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #2f363d;
+  border-radius: 10px;
+  background-color: #2f363d;
+  color: white;
+  cursor: pointer;
+  width: 200px;
+}
+
+.submit-button:hover {
+  background-color: #fefefe;
+  color: #2f363d;
+  border-color: #000;
+}
+
+.question {
+  text-align: left;
+}
+
+.form-container {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.form-container.has-questions {
+  border: 2px solid #ccc;
+}
+.question {
+  text-align: center;
+}
