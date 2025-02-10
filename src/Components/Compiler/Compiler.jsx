@@ -21,15 +21,25 @@ const CodeCompiler = () => {
   const lineNumbersRef = useRef(null); // Create a ref for the line numbers
 
   const handleCompile = async () => {
-    setIsExecuting(true); // Set button state to executing
-
+    setIsExecuting(true);
+  
     try {
-      const response = await axios.post("https://techlearnapi-caa5ekgrfzffd2ed.canadacentral-01.azurewebsites.net/api/Quizzes", {
-        code,
-        language,
-      });
-      const responseData = JSON.parse(response.data.output);
-      const { output, error, statusCode } = responseData;
+      const response = await axios.post(
+        "https://techlearnapi-caa5ekgrfzffd2ed.canadacentral-01.azurewebsites.net/api/Quizzes",
+        { code, language },
+        { headers: { "Content-Type": "application/json" } }
+      );
+  
+      console.log("API Response:", response.data); // Debugging
+  
+      // First, parse the response data (if needed)
+      const responseData = response.data;
+  
+      // Then, parse the nested JSON inside the "output" field
+      const outputData = JSON.parse(responseData.output);
+  
+      const { output, error, statusCode } = outputData;
+  
       if (statusCode === 200) {
         setOutput(output);
       } else {
@@ -37,11 +47,12 @@ const CodeCompiler = () => {
       }
     } catch (error) {
       console.error("Error compiling code", error);
-      setOutput("Error compiling code");
+      setOutput("Error compiling code. Please try again.");
     } finally {
       setIsExecuting(false);
     }
   };
+  
 
   // Function to get line numbers
   const getLineNumbers = () => {
